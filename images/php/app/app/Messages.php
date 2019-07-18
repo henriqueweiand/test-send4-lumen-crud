@@ -13,8 +13,8 @@ class Messages extends Model {
     ];
 
     public static $rules = [
-        "user_id" => "required",
-        "description" => "required",
+        "user_id" => "required|numeric|exists:users,id",
+        "description" => "required|max:255",
     ];
 
     public function user()
