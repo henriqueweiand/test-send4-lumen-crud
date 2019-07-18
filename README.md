@@ -48,7 +48,7 @@ O ambiente pode ser acessado no http://localhost
 
 ### Material complementar
 
-A documentação dos endpoints pode ser utilizada via Postman com o arquivo `send4.postman_collection.json`
+A documentação dos endpoints pode ser utilizada via Postman com o arquivo `send4.postman_collection.json` ou acesse para ter a base dos endpoint em https://app.swaggerhub.com/apis/henriqueweiand/send4/1.0
 
 ### Importante
 
