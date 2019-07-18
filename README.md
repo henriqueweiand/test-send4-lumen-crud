@@ -49,3 +49,7 @@ O ambiente pode ser acessado no http://localhost
 ### Material complementar
 
 A documentação dos endpoints pode ser utilizada via Postman com o arquivo `send4.postman_collection.json`
+
+### Importante
+
+Sempre fique atento que não exista outro processo rodando nas portas 80, 9000 e 3306 pois serão as portas utilizadas ao executar o docker
