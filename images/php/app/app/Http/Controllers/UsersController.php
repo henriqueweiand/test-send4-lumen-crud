@@ -2,7 +2,7 @@
 
 class UsersController extends Controller {
 
-    const MODEL = "App\Users";
+    private $_model = "App\Users";
 
     use RESTActions;
 

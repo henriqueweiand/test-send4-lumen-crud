@@ -26,7 +26,7 @@ $router->group(['prefix' => 'users'], function () use ($router) {
 $router->group(['prefix' => 'messages'], function () use ($router) {
     $router->get('/', 'MessagesController@index');
     $router->get('/{id}', 'MessagesController@show');
-    $router->get('/user/{id}/messages', 'MessagesController@show_user_messages');
+    $router->get('/user/{id}', 'MessagesController@show_user_messages');
     $router->post('/', 'MessagesController@store');
     $router->put('/{id}', 'MessagesController@update');
     $router->delete('/{id}', 'MessagesController@destroy');

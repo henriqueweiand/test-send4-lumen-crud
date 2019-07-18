@@ -5,16 +5,15 @@ use Illuminate\Http\Response;
 
 trait RESTActions {
 
-
     public function index()
     {
-        $m = self::MODEL;
+        $m = $this -> _model;
         return $this->respond(Response::HTTP_OK, $m::all());
     }
 
     public function show($id)
     {
-        $m = self::MODEL;
+        $m = $this -> _model;
         $model = $m::find($id);
         if(is_null($model)){
             return $this->respond(Response::HTTP_NOT_FOUND);
@@ -24,14 +23,14 @@ trait RESTActions {
 
     public function store(Request $request)
     {
-        $m = self::MODEL;
+        $m = $this -> _model;
         $this->validate($request, $m::$rules);
         return $this->respond(Response::HTTP_CREATED, $m::create($request->all()));
     }
 
     public function update(Request $request, $id)
     {
-        $m = self::MODEL;
+        $m = $this -> _model;
         $this->validate($request, $m::$rules);
         $model = $m::find($id);
         if(is_null($model)){
@@ -43,7 +42,7 @@ trait RESTActions {
 
     public function destroy($id)
     {
-        $m = self::MODEL;
+        $m = $this -> _model;
         if(is_null($m::find($id))){
             return $this->respond(Response::HTTP_NOT_FOUND);
         }
