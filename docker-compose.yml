@@ -1,24 +1,37 @@
-nginx:
-  build: images/nginx
-  command: nginx -g "daemon off;"
-  links:
-    - php
-  ports:
-    - "80:80"
-php:
-  build: images/php
-  volumes:
-    - ./images/php:/var/www/html
-  working_dir: /var/www/html/app/public
-  command: php-fpm
-  links:
-    - db:db
-  ports:
-    - "9000:9000"
-db:
-  image: mysql:5.7
-  restart: always
-  ports:
-    - "3306:3306"
-  environment:
-    MYSQL_ROOT_PASSWORD: root
+version: "3.3"
+
+services:
+  db:
+    container_name: mysql
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: lumen
+
+  nginx:
+    container_name: nginx
+    build: images/nginx
+    command: nginx -g "daemon off;"
+    links:
+      - php
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+
+  php:
+    container_name: php
+    build: images/php
+    volumes:
+      - ./lumen:/var/www/html
+    working_dir: /var/www/html/app/public
+    command: php-fpm
+    links:
+      - db:db
+    ports:
+      - "9000:9000"
+    depends_on:
+      - db
