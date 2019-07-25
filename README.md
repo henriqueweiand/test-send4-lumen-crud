@@ -53,3 +53,7 @@ A documentação dos endpoints pode ser utilizada via Postman com o arquivo `sen
 ### Importante
 
 Sempre fique atento que não exista outro processo rodando nas portas 80, 9000 e 3306 pois serão as portas utilizadas ao executar o docker
+
+### Tests
+
+Para rodar os testes, apos os containers estarem de "pé", na pasta lumen execute em seu terminal:  ./vendor/bin/phpunit
