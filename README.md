@@ -28,9 +28,9 @@ O que esperamos ver:
 
 Você pode optar rodar de duas formas
 
-### 1) Execute o arquivo `run.sh` da pasta raiz, podendo ser via terminal com por exemplo:
-
 Antes de tudo, entre na pasta lumen e renomeie o arquivo `.env.example` para `.env` e também o `phpunit.example.xml` para `phpunit.xml` afim de garantir que as variaveis de ambiente fiquem certas assim como para com os testes.
+
+### 1) Execute o arquivo `run.sh` da pasta raiz, podendo ser via terminal com por exemplo:
 
 `sh ./run.sh`
 
