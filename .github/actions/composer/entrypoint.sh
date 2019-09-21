@@ -1,2 +1,3 @@
 #!/bin/sh
-/lumen/composer install
+cd lumen && \
+composer install
