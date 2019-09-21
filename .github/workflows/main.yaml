@@ -17,7 +17,9 @@ jobs:
           touch database/database.sqlite
           php artisan migrate
       - name: Execute tests (Unit and Feature tests) via PHPUnit
-        run: lumen/vendor/bin/phpunit
+        run: |
+          cd lumen
+          vendor/bin/phpunit --testdox --stop-on-failure
       - name: Discord notification
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
