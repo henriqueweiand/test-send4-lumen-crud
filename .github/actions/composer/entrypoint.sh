@@ -1,2 +1,2 @@
 #!/bin/sh
-composer install
+/lumen/composer install
