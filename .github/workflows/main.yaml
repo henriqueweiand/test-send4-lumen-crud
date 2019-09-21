@@ -10,9 +10,17 @@ jobs:
       - uses: actions/checkout@v1
       - uses: ./.github/actions/composer
       - uses: ./.github/actions/config-laravel
+      - name: Create DB and schemas
+        run: |
+          cd lumen
+          mkdir -p database
+          touch database/database.sqlite
+          php artisan migrate
+      - name: Execute tests (Unit and Feature tests) via PHPUnit
+        run: vendor/bin/phpunit
       - name: Discord notification
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
         with:
-          args: 'The project has been deployed.'
+          args: 'The project test-send4-lumen-crund has been deployed.'
