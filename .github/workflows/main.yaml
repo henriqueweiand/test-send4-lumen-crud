@@ -25,4 +25,4 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
         with:
-          args: 'The project test-send4-lumen-crund has been deployed.'
+          args: 'The project test-send4-lumen-crud has been deployed.'

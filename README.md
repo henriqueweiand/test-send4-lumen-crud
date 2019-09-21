@@ -1,5 +1,7 @@
 # test-send4-lumen-crud
 
+<p><img src="https://github.com/henriqueweiand/test-send4-lumen-crud/workflows/Laravel%20Workflow/badge.svg"></p>
+
 ## Proposta
 
 Desenvolver a API RESTful de uma agenda com as seguintes tecnologias PHP + LARAVEL.
@@ -27,6 +29,8 @@ O que esperamos ver:
 Você pode optar rodar de duas formas
 
 ### 1) Execute o arquivo `run.sh` da pasta raiz, podendo ser via terminal com por exemplo:
+
+Antes de tudo, entre na pasta lumen e renomeie o arquivo `.env.example` para `.env` e também o `phpunit.example.xml` para `phpunit.xml` afim de garantir que as variaveis de ambiente fiquem certas assim como para com os testes.
 
 `sh ./run.sh`
 
@@ -56,4 +60,4 @@ Sempre fique atento que não exista outro processo rodando nas portas 80, 9000 e
 
 ### Tests
 
-Para rodar os testes, apos os containers estarem de "pé", na pasta lumen execute em seu terminal:  ./vendor/bin/phpunit
+Para rodar os testes, apos os containers estarem de "pé", na pasta `/lumen` execute em seu terminal:  ./vendor/bin/phpunit
